@@ -7,7 +7,7 @@
 
 
 .hero {
-  padding: 80px;
+  padding: 80px 40px;
 }
 
 .btn {
@@ -16,4 +16,27 @@
   display: inline-block;
   color: #fff;
   text-decoration: none;
+}
+
+#jobs {
+  padding: 0 40px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#jobs-sidebar,
+#jobs-main {
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+}
+
+#jobs-sidebar {
+  width: 30%;
+}
+
+#jobs-main {
+  width: 70%;
 }
