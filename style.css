@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 
+* { outline: 1px dashed #f00; }
 
 .hero {
   padding: 80px 40px;
@@ -24,13 +25,14 @@
 
 ul {
   list-style-type: none;
+  padding: 0;
 }
 
 #jobs-sidebar,
 #jobs-main {
   display: inline-block;
   vertical-align: top;
-  padding: 10px;
+  margin: 0;
 }
 
 #jobs-sidebar {
