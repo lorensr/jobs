@@ -43,13 +43,18 @@
       }
 
       $.getJSON('https://api.lever.co/v0/postings/meteor?mode=json', function (data) {
-        data.forEach(function (job) {
+        data.forEach(function (job, index) {
           var $sidebarItem = $('<li><a href="#">' + job.text + '</a></li>')
           $sidebar.append($sidebarItem);
 
           $sidebarItem.on('click', function () {
             displayJob(job);
+            $sidebarItem.toggleClass('active');
           });
+
+          if (index === 0) {
+            displayJob(job);
+          }
         });
       });
     </script>
