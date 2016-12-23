@@ -5,9 +5,16 @@
   box-sizing: border-box;
 }
 
+// * { outline: 1px dashed #f00; }
+
 
 body {
   font-size: 18px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
 .hero {
@@ -71,5 +78,9 @@ ul {
   width: 65%;
   padding: 0 20px;
   padding-bottom: 40px;
+}
+
+#jobs-main>h2 {
+  margin-top: 0;
 }
 
