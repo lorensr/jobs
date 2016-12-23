@@ -33,6 +33,8 @@
           $main.append('<h2>' + list.text + '</h2>');
           $main.append('<ul>' + list.content + '</ul>');
         });
+
+        $main.append('<div>' + job.additional + '</div>');
       }
 
       $.getJSON('https://api.lever.co/v0/postings/meteor?mode=json', function (data) {
