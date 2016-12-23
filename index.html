@@ -11,9 +11,9 @@
         <a href="#jobs" class="btn">See open positions</a>
         <p>We are an <a href="http://github.com/meteor">open-source</a> company dedicated to helping developers build great apps.  We make <a href="http://www.meteor.com">Meteor</a>, the popular JavaScript framework for building collaborative apps, and <a href="http://www.apollodata.com">Apollo</a>, a set of <a href="http://www.apollodata.com/optics">tools</a> and <a href="http://dev.apollodata.com">libraries</a> for using <a href="http://www.graphql.org">GraphQL</a>.</p>
         <p>All of us here want to make software development easier, better, and more accessible to more people.  We’re a talented team of about 20 people spread across the globe. We are proud of our flexible, remote-first work culture.</p>
-        
+
       </div>
-     
+
       <div id="jobs">
         <h2>Open positions</h2>
         <ul id="jobs-sidebar"></ul><div id="jobs-main"></div>
@@ -27,7 +27,7 @@
       var $sidebar = $('#jobs-sidebar');
       var $main = $('#jobs-main');
 
-      function displayJob(job) {
+      function displayJob(job, $sidebarItem) {
         $main.empty();
         $main.append('<h2>' + job.text + '</h2>');
         $main.append('<a href="' + job.applyUrl + '" class="btn">Apply now</a>');
@@ -39,6 +39,9 @@
         });
 
         $main.append('<div>' + job.additional + '</div>');
+
+        $sidebar.find('li').removeClass('active');
+        $sidebarItem.addClass('active');
       }
 
       $.getJSON('https://api.lever.co/v0/postings/meteor?mode=json', function (data) {
@@ -47,13 +50,11 @@
           $sidebar.append($sidebarItem);
 
           $sidebarItem.on('click', function () {
-            displayJob(job);
-            $sidebar.find('li').removeClass('active');
-            $sidebarItem.addClass('active');
+            displayJob(job, $sidebarItem);
           });
 
           if (index === 0) {
-            displayJob(job);
+            displayJob(job, $sidebarItem);
           }
         });
       });
