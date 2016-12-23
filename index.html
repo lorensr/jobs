@@ -10,20 +10,41 @@
         <h2>Lorem ipsum dolor sit atmet ipsum dolor sum</h2>
         <a href="#!" class="btn">See open positions</a>
       </div>
-      <div class="jobs">
-        <div class="menu">
-          <a href="#!">Job one</a>
-          <a href="#!">Job one</a>
-        </div>
-        <div class="list">
-          <div class="job">
-            <div class="name">Senior Cat Herder</div>
-            <a class="apply" href="#!">Apply now</a>
-            <div class="description">Lorem ipsum dolor sit atmet lorem upsum sum something</div>
-          </div>
-        </div>
+      <div id="jobs">
+        <ul id="jobs-sidebar"></ul>
+        <div id="jobs-main"></div>
       </div>
-      
     </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      crossorigin="anonymous"></script>
+    <script>
+      var $sidebar = $('#jobs-sidebar');
+      var $main = $('#jobs-main');
+
+      function displayJob(job) {
+        $main.empty();
+        $main.append('<h1>' + job.text + '</h1>');
+        $main.append('<a href="' + job.applyUrl + '">Apply now</a>');
+        $main.append('<div>' + job.description + '</div>');
+
+        job.lists.forEach(function (list) {
+          $main.append('<h2>' + list.text + '</h2>');
+          $main.append('<ul>' + list.content + '</ul>');
+        });
+      }
+
+      $.getJSON('https://api.lever.co/v0/postings/meteor?mode=json', function (data) {
+        data.forEach(function (job) {
+          var $sidebarItem = $('<li><a href="#">' + job.text + '</a></li>')
+          $sidebar.append($sidebarItem);
+
+          $sidebarItem.on('click', function () {
+            displayJob(job);
+          });
+        });
+      });
+    </script>
   </body>
 </html>
