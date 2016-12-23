@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 
-* { outline: 1px dashed #f00; }
 
 body {
   font-size: 18px;
@@ -13,6 +12,7 @@ body {
 
 .hero {
   padding: 80px 40px;
+  padding-bottom: 20px;
 }
 
 .btn {
@@ -21,11 +21,16 @@ body {
   display: inline-block;
   color: #fff;
   text-decoration: none;
+  margin-bottom: 10px;
 }
 
 #jobs {
   padding: 0 40px;
   padding-left: 0;
+}
+
+#jobs>h2 {
+  margin-left: 40px;
 }
 
 ul {
@@ -51,6 +56,14 @@ ul {
 
 #jobs-sidebar li.active {
   background-color: #E04E4B;
+  color: #eee;
+}
+
+#jobs-sidebar li a {
+  text-decoration: none;
+}
+
+#jobs-sidebar li.active a {
   color: #eee;
 }
 

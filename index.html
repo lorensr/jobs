@@ -13,8 +13,9 @@
         <p>All of us here want to make software development easier, better, and more accessible to more people.  We’re a talented team of about 20 people spread across the globe. We are proud of our flexible, remote-first work culture.</p>
         
       </div>
-      <h2>Open positions</h2>
+     
       <div id="jobs">
+        <h2>Open positions</h2>
         <ul id="jobs-sidebar"></ul><div id="jobs-main"></div>
       </div>
     </div>
@@ -47,7 +48,8 @@
 
           $sidebarItem.on('click', function () {
             displayJob(job);
-            $sidebarItem.toggleClass('active');
+            $sidebar.find('li').removeClass('active');
+            $sidebarItem.addClass('active');
           });
 
           if (index === 0) {
