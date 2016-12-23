@@ -5,7 +5,11 @@
   box-sizing: border-box;
 }
 
-// * { outline: 1px dashed #f00; }
+* { outline: 1px dashed #f00; }
+
+body {
+  font-size: 18px;
+}
 
 .hero {
   padding: 80px 40px;
@@ -21,6 +25,7 @@
 
 #jobs {
   padding: 0 40px;
+  padding-left: 0;
 }
 
 ul {
@@ -36,9 +41,22 @@ ul {
 }
 
 #jobs-sidebar {
-  width: 30%;
+  width: 35%;
+}
+
+#jobs-sidebar li {
+  padding: 5px 10px;
+  padding-left: 40px;
+}
+
+#jobs-sidebar li.active {
+  background-color: #E04E4B;
+  color: #eee;
 }
 
 #jobs-main {
-  width: 70%;
+  width: 65%;
+  padding: 0 20px;
+  padding-bottom: 40px;
 }
+

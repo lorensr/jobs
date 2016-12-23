@@ -8,9 +8,10 @@
       <div class="hero">
         <h1>jobs@meteor</h1>
         <h2>Build open source framweorks with a talented, remote-first team</h2>
+        <a href="#jobs" class="btn">See open positions</a>
         <p>We are an <a href="http://github.com/meteor">open-source</a> company dedicated to helping developers build great apps.  We make <a href="http://www.meteor.com">Meteor</a>, the popular JavaScript framework for building collaborative apps, and <a href="http://www.apollodata.com">Apollo</a>, a set of <a href="http://www.apollodata.com/optics">tools</a> and <a href="http://dev.apollodata.com">libraries</a> for using <a href="http://www.graphql.org">GraphQL</a>.</p>
         <p>All of us here want to make software development easier, better, and more accessible to more people.  We’re a talented team of about 20 people spread across the globe. We are proud of our flexible, remote-first work culture.</p>
-        <a href="#jobs" class="btn">See open positions</a>
+        
       </div>
       <h2>Open positions</h2>
       <div id="jobs">
@@ -28,7 +29,7 @@
       function displayJob(job) {
         $main.empty();
         $main.append('<h2>' + job.text + '</h2>');
-        $main.append('<a href="' + job.applyUrl + '">Apply now</a>');
+        $main.append('<a href="' + job.applyUrl + '" class="btn">Apply now</a>');
         $main.append('<div>' + job.description + '</div>');
 
         job.lists.forEach(function (list) {
