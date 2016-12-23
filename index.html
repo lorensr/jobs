@@ -15,6 +15,7 @@
 
         <p>All of us here want to make software development easier, better, and more accessible to more people.  We’re a talented team of about 20 people spread across the globe. We are proud of our flexible, remote-first work culture.</p>
       </div>
+      <h2>Open positions</h2>
       <div id="jobs">
         <ul id="jobs-sidebar"></ul>
         <div id="jobs-main"></div>
@@ -30,12 +31,12 @@
 
       function displayJob(job) {
         $main.empty();
-        $main.append('<h1>' + job.text + '</h1>');
+        $main.append('<h2>' + job.text + '</h2>');
         $main.append('<a href="' + job.applyUrl + '">Apply now</a>');
         $main.append('<div>' + job.description + '</div>');
 
         job.lists.forEach(function (list) {
-          $main.append('<h2>' + list.text + '</h2>');
+          $main.append('<h3>' + list.text + '</h3>');
           $main.append('<ul>' + list.content + '</ul>');
         });
 
