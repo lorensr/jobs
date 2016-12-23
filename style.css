@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+  font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+
+.hero {
+  padding: 80px;
+}
+
+.btn {
+  background-color: #E04E4B;
+  padding: 10px;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+}
