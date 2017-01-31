@@ -15,21 +15,57 @@
         <a href="#jobs" class="btn">See open positions</a>
       </div>
 
-      <div class="summary">
+      <div class="body-section">
         <p>We are an <a href="http://github.com/meteor">open-source</a> company dedicated to helping developers build great apps.  We make <a href="http://www.meteor.com">Meteor</a>, the popular JavaScript framework for building collaborative apps, and <a href="http://www.apollodata.com">Apollo</a>, a set of <a href="http://dev.apollodata.com">open-source libraries</a> and <a href="http://www.apollodata.com/optics">commercial tools</a> for using <a href="http://www.graphql.org">GraphQL</a>.</p>
         <p>
           All of us here want to make software development easier, better, and more accessible to more people.  We’re a talented team of about 20 people spread across the globe. We are proud of our flexible and remote-first work culture.
         </p>
       </div>
 
-      <div id="projects">
-        <h2>Apollo Client</h2>
-        <p>The most popular GraphQL client etc</p>
+      <div class="vignette-container">
+        <div class="vignette" style="background-image: url(https://cdn-images-1.medium.com/max/1200/1*V7It9Na7c-Fjx3LPQnEzDA.gif)">
+          <div class="vignette-content">
+            <h3>
+              <a href="https://blog.apollodata.com/upgraded-query-interface-in-optics-248351573727#.u5xfb7x64">GraphQL perf visualization</a>
+            </h3>
+            <p>Read about how Danielle Man improved the UX of the query reporting page in Apollo Optics.</p>
+          </div>
+        </div>
+
+        <div class="vignette" style="background-image: url(https://cdn-images-1.medium.com/max/1600/0*tktJEL9mC8_RRKQh.)">
+          <div class="vignette-content">
+            <h3>
+              <a href="https://blog.meteor.com/optimistic-ui-with-meteor-67b5a78c3fcf#.e0uix15wc">Optimistic UI</a>
+            </h3>
+            <p>Meteor was the first framework to offer Optimistic UI as a default feature. Read about how it works.</p>
+          </div>
+        </div>
+
+        <div class="vignette" style="background-image: url(https://cdn-images-1.medium.com/max/1600/1*M7R2MgXU5-NPCW9EV6zU8Q.jpeg)">
+          <div class="vignette-content">
+            <h3>
+              <a href="https://blog.apollodata.com/upgraded-query-interface-in-optics-248351573727#.u5xfb7x64">GraphQL Summit</a>
+            </h3>
+            <p>In 2016, we hosted the world's first GraphQL conference. Watch Sashko Stubailo and Danielle Man present about GraphQL First development.</p>
+          </div>
+        </div>
+
+        <div class="vignette" style="background-image: url(https://cdn-images-1.medium.com/max/2000/1*9ZFclOcI4mvp4j4bymi8cQ.png)">
+          <div class="vignette-content">
+            <h3>
+              <a href="https://dev-blog.apollodata.com/the-concepts-of-graphql-bc68bd819be3#.9n0zqxh9u">GraphQL concepts blog post</a>
+            </h3>
+            <p>Dhaivat Pandya explains the concepts behind GraphQL caching.</p>
+          </div>
+        </div>
       </div>
 
       <div id="jobs">
-        <h2>Open positions</h2>
-        <ul id="jobs-sidebar"></ul><div id="jobs-main"></div>
+        <div id="jobs-sidebar">
+          <div id="jobs-sidebar-title">Open positions</div>
+          <ul id="jobs-list"></ul>
+        </div>
+        <div id="jobs-main"></div>
       </div>
     </div>
 
@@ -37,10 +73,10 @@
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       crossorigin="anonymous"></script>
     <script>
-      var $sidebar = $('#jobs-sidebar');
+      var $jobsList = $('#jobs-list');
       var $main = $('#jobs-main');
 
-      function displayJob(job, $sidebarItem) {
+      function displayJob(job, $jobsListItem) {
         $main.empty();
         $main.append('<h2>' + job.text + '</h2>');
         $main.append('<a href="' + job.applyUrl + '" class="btn">Apply now</a>');
@@ -53,21 +89,22 @@
 
         $main.append('<div>' + job.additional + '</div>');
 
-        $sidebar.find('li').removeClass('active');
-        $sidebarItem.addClass('active');
+        $jobsList.find('li').removeClass('active');
+        $jobsListItem.addClass('active');
       }
 
       $.getJSON('https://api.lever.co/v0/postings/meteor?mode=json', function (data) {
         data.forEach(function (job, index) {
-          var $sidebarItem = $('<li><a href="#">' + job.text + '</a></li>')
-          $sidebar.append($sidebarItem);
+          var $jobsListItem = $('<li><a href="#">' + job.text + '</a></li>')
+          $jobsList.append($jobsListItem);
 
-          $sidebarItem.on('click', function () {
-            displayJob(job, $sidebarItem);
+          $jobsListItem.on('click', function (e) {
+            e.preventDefault();
+            displayJob(job, $jobsListItem);
           });
 
           if (index === 0) {
-            displayJob(job, $sidebarItem);
+            displayJob(job, $jobsListItem);
           }
         });
       });
