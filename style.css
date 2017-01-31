@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600');
 
 * {
   font-family: "Source Sans Pro", Roboto;
@@ -9,9 +9,10 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-size: 20px;
+  font-size: 16px;
   color: rgb(68, 68, 68);
   -webkit-font-smoothing: antialiased;
+  font-weight: 300;
 }
 
 h1, h2, h3 {
@@ -24,7 +25,19 @@ h1 {
 }
 
 h2 {
-  margin-top: 60px;
+  margin-top: 40px;
+  margin-bottom: 0px;
+  font-weight: 400;
+}
+
+p {
+  margin-top: 0px;
+}
+
+h2, p {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .above-jobs {
@@ -34,16 +47,60 @@ h2 {
 
 a {
   color: #E04E4B;
-  text-decoration: none;
-  border-bottom: 1px solid #E04E4B;
+  text-decoration: underline;
 }
 
-.hero {
+.hero{
   padding: 80px 40px;
   padding-bottom: 20px;
   margin: 0 auto;
-  max-width: 800px;
   text-align: center;
+  min-height: 100vh;
+  background: linear-gradient( 15deg, #E2DFF3, #FFF 50%, #DFECF2 );
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hero p {
+  max-width: 700px;
+}
+
+.hero p.tagline {
+  text-align: center;
+}
+
+.logo {
+  display: inline-block;
+  height: 50px;
+  width: 150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.meteor {
+  background-image: url('meteor.png');
+}
+
+.apollo {
+  background-image: url('apollo.png');
+}
+
+.hero h1 {
+  margin-top: 0px;
+}
+
+.hero a.btn {
+  margin-bottom: 50px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero p {
+  text-align: left;
+  margin-left: auto;
 }
 
 .tagline {
@@ -53,12 +110,6 @@ a {
 .body-section {
   padding: 20px 40px;
   margin: 0 auto;
-  max-width: 800px;
-}
-
-.logo {
-  height: 50px;
-  opacity: 0.8;
 }
 
 .btn {
@@ -67,7 +118,7 @@ a {
   display: inline-block;
   color: #fff;
   text-decoration: none;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   border-radius: 40px;
   font-weight: 700;
   text-transform: uppercase;
@@ -78,7 +129,6 @@ a {
 
 #jobs {
   display: flex;
-  border-top: #eee 1px solid;
   flex-direction: row;
   align-items: stretch;
   background: white;
@@ -88,19 +138,21 @@ a {
   margin-left: 40px;
 }
 
+#jobs h2 {
+  margin-bottom: 10px;
+}
+
 #jobs-list {
   list-style-type: none;
   padding: 0;
 }
 
-#jobs-sidebar,
-#jobs-main {
-  flex: 1;
-}
-
 #jobs-sidebar {
   border-right: #eee 1px solid;
-  background: #f8f8f8;
+  background-image: linear-gradient(175deg, #0e1e32 0%, #333539 100%);
+  color: #FFF;
+  flex: none;
+  width: 350px;
 }
 
 #jobs-sidebar-title {
@@ -114,40 +166,63 @@ a {
 #jobs-list li {
   padding: 5px 10px;
   padding-left: 40px;
+  position: relative;
 }
 
 #jobs-list li a {
   text-decoration: none;
   border: none;
-  color: #333333;
+  color: #FFF;
+  font-weight: 400;
+  transition: all 250ms ease-out;
+  font-size: 14px;
 }
 
-#jobs-list li.active a {
+#jobs-list li.active a, #jobs-list li:hover a {
   color: #e04e4b;
 }
 
+#jobs-list li a:before {
+  content: "\2192";
+  position: absolute;
+  left: 20px;
+  line-height: 26px;
+  vertical-align: middle;
+  transition: all 250ms ease-out;
+  opacity: 0;
+  color: #e04e4b;
+}
+
+#jobs-list li:hover a:before {
+  opacity: 1;
+}
+
 #jobs-main {
-  flex: 2;
+  font-size: 14px;
+  flex: 1;
   padding: 40px 40px;
   padding-bottom: 40px;
+  background-image: linear-gradient(160deg, #ecfafa 0%, #fff 100%);
 }
 
 #jobs-main>h2 {
   margin-top: 0;
+  margin-left: 0;
 }
 
 .vignette-container {
-
+  font-size: 0px;
 }
 
 .vignette {
-  width: 31vw;
+  font-size: 12px;
+  width: 33.333vw;
   height: 20vw;
   display: inline-block;
-  border: #eee 1px solid;
+  /*border: #eee 1px solid;*/
   position: relative;
   overflow: hidden;
-  margin: 1vw;
+  /*margin: 1vw;*/
   background-position: center center;
   background-size: cover;
 }
@@ -161,12 +236,20 @@ a {
 }
 
 .vignette-content {
-  background: #eee;
+  text-decoration: none;
   padding: 20px;
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 16px;
   position: absolute;
   width: 100%;
+  top: 0;
   bottom: 0;
+  background-image: linear-gradient(0deg,rgba(0,0,0,.60) 55%,transparent);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .vignette-content h3 {
@@ -178,6 +261,7 @@ a {
 .vignette-content p {
   margin-top: 0;
   margin-bottom: 0;
+  max-width: 300px;
 }
 
 .vignette-content h3 a {
@@ -196,17 +280,29 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 40px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .benefits-item {
   width: 30%;
   padding: 10px;
+  position: relative;
 }
 
 @media(max-width: 800px) {
   .benefits-item {
     width: 100%;
   }
+}
+
+.benefit-img {
+  height: 24px;
+  width: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-position: center;
 }
 
 .benefits-item img {
@@ -223,4 +319,5 @@ a {
 .benefits dd {
   margin-left: 60px;
   margin-bottom: 10px;
+  font-size: 12px;
 }
