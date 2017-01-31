@@ -3,6 +3,7 @@
 * {
   font-family: "Source Sans Pro", Roboto;
   box-sizing: border-box;
+  line-height: 1.5em;
 }
 
 html, body {
@@ -20,6 +21,10 @@ h1, h2, h3 {
 h1 {
   font-size: 48px;
   margin-bottom: 10px;
+}
+
+h2 {
+  margin-top: 60px;
 }
 
 body {
@@ -45,8 +50,7 @@ a {
 }
 
 .body-section {
-  padding: 80px 40px;
-  padding-bottom: 20px;
+  padding: 20px 40px;
   margin: 0 auto;
   max-width: 800px;
 }
