@@ -27,8 +27,9 @@ h2 {
   margin-top: 60px;
 }
 
-body {
-  background: linear-gradient( 0deg, #D6D7FF, white 40%, rgb(242, 252, 252) );
+.above-jobs {
+  background: linear-gradient( 0deg, #F5F5FF, white 50%, rgb(242, 252, 252) );
+  padding-bottom: 40px;
 }
 
 a {
@@ -80,7 +81,6 @@ a {
   border-top: #eee 1px solid;
   flex-direction: row;
   align-items: stretch;
-  margin-top: 40px;
   background: white;
 }
 
