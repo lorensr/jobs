@@ -28,7 +28,7 @@ h2 {
 }
 
 body {
-  background: linear-gradient( 0deg, white, white 40%, rgb(242, 252, 252) );
+  background: linear-gradient( 0deg, #D6D7FF, white 40%, rgb(242, 252, 252) );
 }
 
 a {
@@ -81,6 +81,7 @@ a {
   flex-direction: row;
   align-items: stretch;
   margin-top: 40px;
+  background: white;
 }
 
 #jobs>h2 {
