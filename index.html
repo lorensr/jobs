@@ -165,6 +165,9 @@
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       crossorigin="anonymous"></script>
     <script>
+      // Make all links open in new tab
+      $('a').attr('target', '_blank');
+
       var $jobsList = $('#jobs-list');
       var $main = $('#jobs-main');
 
