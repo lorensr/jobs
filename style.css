@@ -1,34 +1,74 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 * {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Source Sans Pro", Roboto;
   box-sizing: border-box;
-}
-
-// * { outline: 1px dashed #f00; }
-
-
-body {
-  font-size: 18px;
 }
 
 html, body {
   margin: 0;
   padding: 0;
+  font-size: 20px;
+  color: rgb(68, 68, 68);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2 {
+  font-weight: 100;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+body {
+  background: linear-gradient( 0deg, white, white 40%, rgb(242, 252, 252) );
+}
+
+a {
+  color: #E04E4B;
+  text-decoration: none;
+  border-bottom: 1px solid #E04E4B;
 }
 
 .hero {
   padding: 80px 40px;
   padding-bottom: 20px;
+  margin: 0 auto;
+  width: 800px;
+  text-align: center;
+}
+
+.tagline {
+  margin-top: 10px;
+}
+
+.summary {
+  padding: 80px 40px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+  width: 800px;
+}
+
+.logo {
+  height: 50px;
+  opacity: 0.8;
 }
 
 .btn {
   background-color: #E04E4B;
-  padding: 10px;
+  padding: 0 40px;
   display: inline-block;
   color: #fff;
   text-decoration: none;
   margin-bottom: 10px;
+  border-radius: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 4px;
+  line-height: 40px;
 }
 
 #jobs {
@@ -40,7 +80,7 @@ html, body {
   margin-left: 40px;
 }
 
-ul {
+ul#jobs-sidebar {
   list-style-type: none;
   padding: 0;
 }
