@@ -176,3 +176,23 @@ a {
   object-fit: cover;
   width: 100%;
 }
+
+.benefits {
+  font-size: 16px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.benefits-item {
+  width: 30%;
+  padding: 10px;
+}
+
+.benefits dt {
+  font-weight: 600;
+}
+
+.benefits dd {
+  margin-left: 0;
+  margin-bottom: 10px;
+}
