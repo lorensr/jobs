@@ -209,6 +209,10 @@ a {
   margin-left: 0;
 }
 
+#jobs-main h3 {
+  font-weight: 400;
+}
+
 .vignette-container {
   font-size: 0px;
 }
