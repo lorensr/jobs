@@ -36,7 +36,7 @@ a {
   padding: 80px 40px;
   padding-bottom: 20px;
   margin: 0 auto;
-  width: 800px;
+  max-width: 800px;
   text-align: center;
 }
 
@@ -48,7 +48,7 @@ a {
   padding: 80px 40px;
   padding-bottom: 20px;
   margin: 0 auto;
-  width: 800px;
+  max-width: 800px;
 }
 
 .logo {
@@ -147,6 +147,14 @@ a {
   background-size: cover;
 }
 
+@media(max-width: 800px) {
+  .vignette {
+    width: 90%;
+    margin: 5%;
+    height: 300px;
+  }
+}
+
 .vignette-content {
   background: #eee;
   padding: 20px;
@@ -181,6 +189,8 @@ a {
   font-size: 16px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 40px;
 }
 
 .benefits-item {
@@ -188,11 +198,24 @@ a {
   padding: 10px;
 }
 
+@media(max-width: 800px) {
+  .benefits-item {
+    width: 100%;
+  }
+}
+
+.benefits-item img {
+  max-height: 40px;
+  max-width: 40px;
+  float: left;
+}
+
 .benefits dt {
   font-weight: 600;
+  margin-left: 60px;
 }
 
 .benefits dd {
-  margin-left: 0;
+  margin-left: 60px;
   margin-bottom: 10px;
 }
