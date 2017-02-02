@@ -213,14 +213,14 @@ a {
   font-weight: 400;
 }
 
-.vignette-container {
+.featurette-container {
   font-size: 0px;
 }
 
-.vignette {
+.featurette {
   font-size: 12px;
   width: 33.333vw;
-  height: 20vw;
+  height: 25vw;
   display: inline-block;
   /*border: #eee 1px solid;*/
   position: relative;
@@ -231,14 +231,14 @@ a {
 }
 
 @media(max-width: 800px) {
-  .vignette {
+  .featurette {
     width: 90%;
     margin: 5%;
     height: 300px;
   }
 }
 
-.vignette-content {
+.featurette-content {
   text-decoration: none;
   padding: 20px;
   font-size: 14px;
@@ -255,24 +255,28 @@ a {
   align-items: center;
 }
 
-.vignette-content h3 {
+.featurette-content h3 {
   font-weight: 600;
   margin-bottom: 0;
   margin-top: 0;
 }
 
-.vignette-content p {
+.featurette-content p {
   margin-top: 0;
   margin-bottom: 0;
   max-width: 300px;
 }
 
-.vignette-content h3 a {
+.featurette-content .featurette-job-title {
+  font-style: italic;
+}
+
+.featurette-content h3 a {
   font-weight: 600;
   border-bottom: none;
 }
 
-.vignette-image {
+.featurette-image {
   object-fit: cover;
   width: 100%;
 }
