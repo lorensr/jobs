@@ -469,3 +469,44 @@ a {
     }
   }
 }
+
+
+.pictures-section, .pictures-section * {
+  box-model: border-box;
+}
+
+.pictures-section {
+  margin: 0 auto;
+  text-align: center;
+  width: 1000px;
+}
+
+.pictures-section .image {
+  display: inline-block;
+  width: 33%;
+  height: 230px;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.pictures-section .image.double {
+  width: 66.1%;
+}
+
+
+@media (max-width: 1000px) {
+  .pictures-section {
+    padding: 0 40px;
+    width: auto;
+  }
+  .pictures-section .image {
+    width: calc(50% - 41px);
+    height: 260px;
+  }
+
+  .pictures-section .image.double {
+    width: calc(100% - 80px);
+  }
+}
