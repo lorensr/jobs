@@ -107,7 +107,6 @@ a {
   margin-right: auto;
 }
 .hero p {
-  max-width: 600px;
   text-align: left;
   margin-left: auto;
 }
@@ -213,26 +212,23 @@ a {
 }
 .benefits .benefits-item {
   width: 300px;
-  padding: 10px;
+  padding: 10px 20px 10px 10px;
   position: relative;
   vertical-align: top;
   display: inline-block;
   text-align: left;
 }
 .benefits .benefits-item .icon {
-  height: 20px;
-  width: 20px;
-  background-size: contain;
-  background-repeat: no-repeat;
+  font-size: 20px;
+  margin-top: 2px;
   position: absolute;
-  background-position: center;
 }
 .benefits .benefits-item dt {
   font-weight: 600;
-  margin-left: 40px;
+  margin-left: 30px;
 }
 .benefits .benefits-item dd {
-  margin-left: 40px;
+  margin-left: 30px;
   font-size: 12px;
 }
 #jobs {
@@ -281,6 +277,7 @@ a {
 }
 #jobs #jobs-sidebar #jobs-list li a:before,
 #jobs #jobs-sidebar #jobs-list li a:after {
+  font-family: 'percolate';
   position: absolute;
   line-height: 22px;
   vertical-align: middle;
@@ -289,11 +286,11 @@ a {
   color: #e04e4b;
 }
 #jobs #jobs-sidebar #jobs-list li a:before {
-  content: "\2192";
+  content: "\e615";
   left: -20px;
 }
 #jobs #jobs-sidebar #jobs-list li a:after {
-  content: "\2190";
+  content: "\e614";
   right: -20px;
 }
 #jobs #jobs-sidebar #jobs-list li.active a {
@@ -322,6 +319,16 @@ a {
   margin-top: 0;
   margin-left: 0;
   padding: 0;
+  cursor: pointer;
+  transition: all 300ms ease-out;
+}
+#jobs #jobs-main h2 .icon-link {
+  margin-left: 5px;
+  font-size: 18px;
+}
+#jobs #jobs-main h2:hover {
+  color: #e04e4b;
+  transition: all 300ms ease-out;
 }
 #jobs #jobs-main h3 {
   font-weight: 400;
