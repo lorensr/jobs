@@ -34,6 +34,10 @@ function displayJob(job, $jobsListItem) {
 $.getJSON('https://api.lever.co/v0/postings/meteor?mode=json', function (data) {
   jobs = data;
 
+  jobs = data.filter(job => !job.text.match(/intern/i));
+  internships = data.filter(job => !!job.text.match(/intern/i));
+  jobs.push(...internships);
+
   jobs.forEach(function (job, index) {
     var $jobsListItem = $(
       '<li><a href="#' + job.id + '">' + job.text + '</a></li>');

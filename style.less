@@ -182,13 +182,23 @@ a {
       left: 0;
       bottom: 0;
       right: 0;
-      background-color: rgba(0,0,0,.35);
+      background-image: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.6) 100%);
       text-shadow: 0 1px 2px rgba(0,0,0,0.8);
       text-align: left;
+      transition: all 300ms ease-out;
+
+      .title {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 15px;
+      }
 
       h3 {
         font-weight: 400;
-        font-size: 22px;
+        font-size: 16px;
+        text-transform: uppercase;
         transition: all 300ms ease-out;
         transform: translate3d(0, 0, 0);
         text-align: left;
@@ -197,20 +207,23 @@ a {
       }
 
       .featurette-job-title {
-        font-style: italic;
-        font-weight: bold;
+        font-size: 22px;
         transition: all 300ms ease-out;
         transform: translate3d(0, 0, 0);
       }
 
       p {
         opacity: 0;
+        background-image: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 50%);
         transform: translate3d(0, 10px, 0);
         transition: all 300ms ease-out;
-        padding: 25px 30px;
+        padding: 15px;
         text-align: left;
         font-size: 22px;
         position: absolute;
+        vertical-align: bottom;
+        display: flex;
+        align-items: flex-end;
         top: 0;
         left: 0;
         right: 0;
@@ -218,9 +231,6 @@ a {
       }
 
       &:hover {
-        background-color: rgba(0,0,0,.50);
-        transition: all 300ms ease-out;
-
         h3 {
           opacity: 0;
           transition: all 300ms ease-out;
@@ -488,14 +498,14 @@ a {
 }
 
 .pictures-section {
-  margin: 0 auto;
+  margin: 0 auto 50px;
   text-align: center;
   width: 1000px;
 }
 
 .pictures-section .image {
   display: inline-block;
-  width: 33%;
+  width: ~"calc(33.33333333% - 10px)";
   height: 230px;
   margin: 0;
   background-repeat: no-repeat;
@@ -504,7 +514,7 @@ a {
 }
 
 .pictures-section .image.double {
-  width: 66.1%;
+  width: ~"calc(66.66666% - 10px)";
 }
 
 
