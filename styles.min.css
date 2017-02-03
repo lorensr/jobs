@@ -12,13 +12,18 @@ body {
   color: #444444;
   -webkit-font-smoothing: antialiased;
 }
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
 h1,
 h2,
 h3 {
   font-weight: 100;
-  max-width: 600px;
+  max-width: 680px;
   text-align: center;
   margin: 0 auto;
+  padding: 0 40px;
 }
 h1 {
   font-size: 48px;
@@ -36,7 +41,7 @@ h4.subtitle {
   display: flex;
   color: #aaa;
   font-size: 12px;
-  width: 500px;
+  max-width: 500px;
   margin: 40px auto;
   justify-content: center;
   align-items: center;
@@ -55,8 +60,9 @@ h4.subtitle:after {
   margin-left: calc(10px - .35em);
 }
 p {
-  max-width: 600px;
+  max-width: 680px;
   margin: 0 auto;
+  padding: 0 40px;
 }
 p + p {
   margin-top: 20px;
@@ -68,7 +74,7 @@ a {
 .hero {
   padding: 40px;
   height: 100vh;
-  min-height: 500px;
+  min-height: min-content;
   max-height: 700px;
   margin: 0 auto;
   text-align: center;
@@ -81,6 +87,7 @@ a {
   box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 0.05);
   margin-left: -40px;
   margin-right: -40px;
+  width: calc(100% + 80px);
 }
 .hero img {
   display: inline-block;
@@ -120,9 +127,10 @@ a {
 }
 .featurette-container {
   font-size: 0px;
-  max-width: 1000px;
+  max-width: 1080px;
   text-align: center;
   margin: 0 auto -10px;
+  padding: 0 40px;
 }
 .featurette-container .featurette {
   font-size: 12px;
@@ -151,12 +159,12 @@ a {
 }
 .featurette-container .featurette .featurette-content h3 {
   font-weight: 400;
-  margin-bottom: 0;
-  margin-top: 0;
   font-size: 22px;
   transition: all 300ms ease-out;
   transform: translate3d(0, 0, 0);
   text-align: left;
+  padding: 0;
+  margin: 0;
 }
 .featurette-container .featurette .featurette-content .featurette-job-title {
   font-style: italic;
@@ -198,17 +206,18 @@ a {
 }
 .benefits {
   font-size: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 1000px;
+  max-width: 1080px;
   margin: 0 auto;
   padding: 0 40px;
+  text-align: center;
 }
 .benefits .benefits-item {
   width: 300px;
   padding: 10px;
   position: relative;
+  vertical-align: top;
+  display: inline-block;
+  text-align: left;
 }
 .benefits .benefits-item .icon {
   height: 20px;
@@ -225,12 +234,6 @@ a {
 .benefits .benefits-item dd {
   margin-left: 40px;
   font-size: 12px;
-}
-/* revisit media queries */
-@media (max-width: 800px) {
-  .benefits-item {
-    width: 100%;
-  }
 }
 #jobs {
   display: flex;
@@ -257,6 +260,7 @@ a {
   line-height: 39px;
   vertical-align: middle;
   text-align: right;
+  padding: 0;
 }
 #jobs #jobs-sidebar #jobs-list {
   list-style-type: none;
@@ -265,7 +269,6 @@ a {
 }
 #jobs #jobs-sidebar #jobs-list li {
   padding: 5px 0;
-  padding-left: 40px;
   position: relative;
   cursor: pointer;
 }
@@ -276,15 +279,22 @@ a {
   transition: all 250ms ease-out;
   color: #444444;
 }
+#jobs #jobs-sidebar #jobs-list li a:before,
 #jobs #jobs-sidebar #jobs-list li a:after {
-  content: "\2190";
   position: absolute;
-  right: -20px;
   line-height: 22px;
   vertical-align: middle;
   transition: all 250ms ease-out;
   opacity: 0;
   color: #e04e4b;
+}
+#jobs #jobs-sidebar #jobs-list li a:before {
+  content: "\2192";
+  left: -20px;
+}
+#jobs #jobs-sidebar #jobs-list li a:after {
+  content: "\2190";
+  right: -20px;
 }
 #jobs #jobs-sidebar #jobs-list li.active a {
   color: #e04e4b;
@@ -311,11 +321,13 @@ a {
   text-align: left;
   margin-top: 0;
   margin-left: 0;
+  padding: 0;
 }
 #jobs #jobs-main h3 {
   font-weight: 400;
   font-size: 20px;
   margin: 20px 0 0;
+  padding: 0;
 }
 #jobs #jobs-main ul {
   margin: 0;
@@ -344,4 +356,33 @@ a {
 }
 .footer > div > div {
   margin-bottom: 6px;
+}
+@media (max-width: 700px) {
+  h1 {
+    font-size: 28px;
+  }
+  .featurette-container .featurette {
+    width: 100%;
+    height: 100px;
+  }
+  .benefits .benefits-item {
+    width: 100%;
+  }
+  #jobs {
+    flex-direction: column;
+  }
+  #jobs #jobs-sidebar {
+    background-image: linear-gradient(190deg, #e5f2de 0%, #fff 50%);
+    width: 100%;
+    text-align: left;
+  }
+  #jobs #jobs-sidebar h2 {
+    text-align: left;
+  }
+  #jobs #jobs-sidebar #jobs-list li:hover a:before {
+    opacity: 1;
+  }
+  #jobs #jobs-sidebar #jobs-list li:hover a:after {
+    opacity: 0;
+  }
 }
