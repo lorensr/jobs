@@ -149,9 +149,14 @@
       </div>
     </dl>
 
+    <div class="pictures-section" id="pictures">
+    </div>
+
     <div class="body-section">
       <p>Meteor celebrates, supports, and thrives on the diversity and inclusion of our employees, our products, and our community. We are committed to providing equal employment and advancement opportunities to qualified applicants regardless of their race, color, ancestry, gender, religion, national origin, sexual orientation, age, citizenship, marital status, disability, Veteran or any other legally protected status.</p>
     </div>
+
+
 
     <div id="jobs">
       <div id="jobs-sidebar">
@@ -199,6 +204,19 @@
             displayJob(job, $jobsListItem);
           }
         });
+      });
+    </script>
+
+    <script src="https://unpkg.com/packery@2/dist/packery.pkgd.min.js"></script>
+    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+    <script>
+      var $pictures = $('#pictures');
+      [2,3,5,1,7].forEach(function(p) {
+        $pictures.append('<div class="image'+(p == 5 ? ' double' : '')+'" style="background-image: url(img/team/' + p + '.jpg)"></div>');
+      });
+      $pictures.packery({
+        itemSelector: 'div',
+        gutter: 2,
       });
     </script>
   </body>
