@@ -1,8 +1,6 @@
 // Make all links open in new tab
 $('a').attr('target', '_blank');
 
-
-
 // Display jobs from Lever
 var $jobsList = $('#jobs-list');
 var $main = $('#jobs-main');
@@ -11,7 +9,7 @@ var jobs = [];
 function displayJob(job, $jobsListItem) {
   $main.empty();
 
-  var $jobTitle = $('<h2>' + job.text + '</h2>');
+  var $jobTitle = $('<h2>' + job.text + '<span class="icon-link"><span/></h2>');
 
   $jobTitle.on('click', function () {
     window.location.hash = job.id;
@@ -38,7 +36,7 @@ $.getJSON('https://api.lever.co/v0/postings/meteor?mode=json', function (data) {
 
   jobs.forEach(function (job, index) {
     var $jobsListItem = $(
-      '<li><a href="#" id="link-' + job.id + '">' + job.text + '</a></li>');
+      '<li><a href="#' + job.id + '">' + job.text + '</a></li>');
     $jobsList.append($jobsListItem);
 
     $jobsListItem.on('click', function (e) {
@@ -50,7 +48,6 @@ $.getJSON('https://api.lever.co/v0/postings/meteor?mode=json', function (data) {
   var selectedJob = jobs[0];
   if (window.location.hash) {
     var id = window.location.hash.substr(1);
-
     var jobWithId = jobs.filter(function (job) { return job.id === id });
 
     if (jobWithId.length) {
