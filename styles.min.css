@@ -431,10 +431,10 @@ a:hover {
     width: auto;
   }
   .pictures-section .image {
-    width: calc(9%);
+    width: calc(20% - 16px - 10px);
     height: 260px;
   }
   .pictures-section .image.double {
-    width: calc(20%);
+    width: calc(20% - 16px - 10px);
   }
 }
