@@ -84,7 +84,7 @@ a {
   text-decoration: underline;
 }
 
-.hero{
+.hero {
   padding: 40px;
   height: 100vh;
   min-height: 500px;
@@ -96,6 +96,10 @@ a {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  background-position: right center;
+  box-shadow: inset 0px 0px 40px rgba(0,0,0,0.05);
+  margin-left: -40px;
+  margin-right: -40px;
 
   img {
     display: inline-block;
@@ -389,5 +393,18 @@ a {
 
   img {
     height: 24px;
+    vertical-align: middle;
+
+    &.apollo {
+      margin-top: 2px;
+      height: 29px;
+    }
+  }
+
+  &>div {
+    margin-top: 18px;
+    &>div {
+      margin-bottom: 6px;
+    }
   }
 }
