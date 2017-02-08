@@ -1,5 +1,5 @@
 // Make all links open in new tab
-$('a').attr('target', '_blank');
+$('a:not(.fragment)').attr('target', '_blank');
 
 // Display jobs from Lever
 var $jobsList = $('#jobs-list');
